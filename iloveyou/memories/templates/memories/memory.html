@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memories</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background: #444444;
+        font-family: verdana, arial, sans-serif;
+        color: #444444;
+        font-size: 12px;
+        margin: 0px;
+    }
+    .fit { /* set relative picture size */
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .center {
+        display: block;
+        margin: auto;
+    }
+    img {
+        width:  700px;
+        height: 700px;
+    }
+    .image {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .image-box {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .image-box .inner_box{
+        position:absolute;
+        background:rgba(255,255,255,0.7);
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        padding:35px;
+        text-align:center;
+    }
+    .inner_box h2{
+        font-family:arial;
+        text-align:center;
+        font-size:26px;
+        font-weight:normal;
+        color:#777;
+    }
+    .rotate0 {
+    }
+    .rotate90 {
+      -webkit-transform:rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    .rotate180 {
+      -webkit-transform:rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    .rotate270 {
+      -webkit-transform:rotate(270deg);
+      -moz-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
+</style>
+
+<body>
+
+    <div id="wrapper">
+        <div class="image-box">
+            <img class="image rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
+            <audio controls style="display:none" loop>
+                <source src="{{ memory.sound.url }}" type="audio/mpeg">
+            </audio>
+            <img class="background" src="../../static/images/border-image.png" />
+            <div class="inner_box">
+                <h2>{{ memory.text }}</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
