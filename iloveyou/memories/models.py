@@ -19,6 +19,7 @@ class Memory(models.Model):
                                                                                           (90, '90 Degrees'),
                                                                                           (180, '180 Degrees'),
                                                                                           (270, '270 Degrees')], blank=True, null=True, default=0)
+    shown = models.BooleanField(verbose_name='Lovely Shown', default=False)
 
     class Meta:
         """

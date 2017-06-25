@@ -84,18 +84,24 @@
     }
 </style>
 
-<body>
+<body onclick="window.location.href='/';" style="cursor:pointer; width:100%; height:100%;">
 
     <div id="wrapper">
         <div class="image-box">
-            <img class="image rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
-            <audio controls style="display:none" loop>
-                <source src="{{ memory.sound.url }}" type="audio/mpeg">
-            </audio>
+            {% if memory %}
+                <img class="image rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
+                <audio controls style="display:none" loop>
+                    <source src="{{ memory.sound.url }}" type="audio/mpeg">
+                </audio>
+            {% else %}
+                <img class="image" src="../../static/images/no-pic-image.png" />
+            {% endif %}
             <img class="background" src="../../static/images/border-image.png" />
-            <div class="inner_box">
-                <h2>{{ memory.text }}</h2>
-            </div>
+            {% if memory %}
+                <div class="inner_box">
+                    <h2>{{ memory.text }}</h2>
+                </div>
+            {% endif %}
         </div>
     </div>
 </body>
