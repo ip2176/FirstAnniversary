@@ -11,10 +11,9 @@ def index(request):
     """
     next_memory = None
 
-    # Try to get a shuffled list of memories
+    # Try to get a list of memories
     try:
-        memories = list(Memory.objects.all())
-        shuffle(memories)
+        memories = Memory.objects.all()
     except TypeError:
         memories = None
         pass
@@ -26,8 +25,7 @@ def index(request):
 
             # Get all the memories and update their shown fields
             Memory.objects.all().update(shown=False)
-            memories = list(Memory.objects.all())
-            shuffle(memories)
+            memories = Memory.objects.all()
 
         for memory in memories:
 
@@ -39,7 +37,7 @@ def index(request):
         # Do one last check to iron out bugs
         if not next_memory:
             Memory.objects.all().update(shown=False)
-            next_memory = memories[0]
+            next_memory = Memory.objects.all().first()
 
         next_memory.shown = True
         next_memory.save()

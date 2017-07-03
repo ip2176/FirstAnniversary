@@ -5,100 +5,26 @@
     <title>Memories</title>
 </head>
 
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
-    body {
-        background: #444444;
-        font-family: verdana, arial, sans-serif;
-        color: #444444;
-        font-size: 12px;
-        margin: 0px;
-    }
-    .fit { /* set relative picture size */
-        max-width: 100%;
-        max-height: 100%;
-    }
-    .center {
-        display: block;
-        margin: auto;
-    }
-    img {
-        width:  700px;
-        height: 700px;
-    }
-    .image {
-        position: relative;
-        top: 0;
-        left: 0;
-    }
-    .background {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .image-box {
-        margin: 0 auto;
-        width: 100%;
-    }
-    .image-box .inner_box{
-        position:absolute;
-        background:rgba(255,255,255,0.7);
-        top:50%;
-        left:50%;
-        transform:translate(-50%,-50%);
-        padding:35px;
-        text-align:center;
-    }
-    .inner_box h2{
-        font-family:arial;
-        text-align:center;
-        font-size:26px;
-        font-weight:normal;
-        color:#777;
-    }
-    .rotate0 {
-    }
-    .rotate90 {
-      -webkit-transform:rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg);
-    }
-    .rotate180 {
-      -webkit-transform:rotate(180deg);
-      -moz-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-      -o-transform: rotate(180deg);
-      transform: rotate(180deg);
-    }
-    .rotate270 {
-      -webkit-transform:rotate(270deg);
-      -moz-transform: rotate(270deg);
-      -ms-transform: rotate(270deg);
-      -o-transform: rotate(270deg);
-      transform: rotate(270deg);
-    }
-</style>
+{% load static %}
 
-<body onclick="window.location.href='/';" style="cursor:pointer; width:100%; height:100%;">
+<link rel="stylesheet" href="{% static 'css/memory_css.css' %}">
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
-    <div id="wrapper">
-        <div class="image-box">
+<body onclick="window.location.href='/';">
+
+    <div id="container">
+        <div class="images">
             {% if memory %}
                 <img class="image rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
-                <audio controls style="display:none" loop>
+                <audio style="display: none;" controls loop>
                     <source src="{{ memory.sound.url }}" type="audio/mpeg">
                 </audio>
             {% else %}
-                <img class="image" src="../../static/images/no-pic-image.png" />
+                <img class="image" src="{% static 'images/no-pic-image.png' %}" />
             {% endif %}
-            <img class="background" src="../../static/images/border-image.png" />
+            <img class="background" src="{% static 'images/border-image.png' %}" />
             {% if memory %}
-                <div class="inner_box">
+                <div class="word_box">
                     <h2>{{ memory.text }}</h2>
                 </div>
             {% endif %}

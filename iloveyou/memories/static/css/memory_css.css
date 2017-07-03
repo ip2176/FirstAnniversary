@@ -1,13 +1,47 @@
-/* Display images in the center */
-* {
-    padding: 0;
-    margin: 0;
+body {
+    cursor: pointer;
+    width:100%;
+    height:100%;
 }
-.fit { /* set relative picture size */
-    max-width: 100%;
-    max-height: 100%;
+
+.word_box {
+    margin: 0 auto;
+    width: 100%;
 }
-.center {
-    display: block;
-    margin: auto;
+
+#container .images .word_box{
+    background: rgba(255,255,255,0.7);
+    text-align:center;
+}
+#container .images .word_box h2{
+    font-family:arial;
+    text-align:center;
+    font-size:26px;
+    font-weight:normal;
+    color:#777;
+}
+
+.rotate0 {
+}
+
+.rotate90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.rotate180 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.rotate270 {
+  -webkit-transform:rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
 }
