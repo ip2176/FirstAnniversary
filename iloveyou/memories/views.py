@@ -10,6 +10,7 @@ def index(request):
 
     """
     next_memory = None
+    show_link = False
 
     # Try to get a list of memories
     try:
@@ -36,6 +37,7 @@ def index(request):
 
         # Do one last check to iron out bugs
         if not next_memory:
+            show_link = True
             Memory.objects.all().update(shown=False)
             next_memory = Memory.objects.all().first()
 
@@ -43,6 +45,7 @@ def index(request):
         next_memory.save()
 
     context = {
-        'memory': next_memory
+        'memory': next_memory,
+        'show_link': show_link
     }
     return render(request, 'memories/memory.html', context=context)
