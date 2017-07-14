@@ -9,25 +9,38 @@
 
 <link rel="stylesheet" href="{% static 'css/memory_css.css' %}">
 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
 
 <body onclick="window.location.href='/';">
 
-    <div id="container">
-        <div class="images">
-            {% if memory %}
-                <img class="image rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
-                <audio style="display: none;" controls loop>
-                    <source src="{{ memory.sound.url }}" type="audio/mpeg">
-                </audio>
-            {% else %}
-                <img class="image" src="{% static 'images/no-pic-image.png' %}" />
-            {% endif %}
-            <img class="background" src="{% static 'images/border-image.png' %}" />
-            {% if memory %}
-                <div class="word_box">
-                    <h2>{{ memory.text }}</h2>
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <div id="picture-container">
+                    {% if memory %}
+                        <div id="background">
+                            <img class="rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
+                        </div>
+                        <audio style="display: none;" controls loop>
+                            <source src="{{ memory.sound.url }}" type="audio/mpeg">
+                        </audio>
+                    {% else %}
+                        <div id="background">
+                            <img src="{% static 'images/no-pic-image.png' %}" />
+                        </div>
+                    {% endif %}
+                    <div id="foreground">
+                    </div>
                 </div>
-            {% endif %}
+            </div>
+
+        {% if memory %}
+            <div class="col-4">
+                <div class="word_box">
+                    <h2>{{ memory.text|linebreaks }}</h2>
+                </div>
+            </div>
+        {% endif %}
         </div>
     </div>
 </body>

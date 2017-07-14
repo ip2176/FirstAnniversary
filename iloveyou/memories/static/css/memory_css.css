@@ -1,23 +1,51 @@
 body {
     cursor: pointer;
-    width:100%;
-    height:100%;
+    padding: 0;
+    margin: 0;
 }
 
-.word_box {
-    margin: 0 auto;
-    width: 100%;
+img {
+    height: 300px;
+    width: 300px;
 }
 
-#container .images .word_box{
+#picture-container {
+    position: relative;
+    height: 400px;
+}
+
+#background {
+    position: absolute;
+    padding-left: 50px;
+    padding-top: 50px;
+}
+
+#foreground {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background-size: 400px 400px;
+    box-shadow: 0 0 50px #ffffff inset;
+    background-image: linear-gradient(to bottom,
+                        rgba(255,255,255, 1) 0%,
+                        rgba(255,255,255, 0) 20%,
+                        rgba(255,255,255, 0) 80%,
+                        rgba(255,255,255, 1) 100%),
+                      linear-gradient(to left,
+                        rgba(255,255,255, 1) 0%,
+                        rgba(255,255,255, 0) 20%,
+                        rgba(255,255,255, 0) 80%,
+                        rgba(255,255,255, 1) 100%),
+    url(/static/images/border-image.png);
+}
+
+.word_box{
     background: rgba(255,255,255,0.7);
-    text-align:center;
 }
-#container .images .word_box h2{
+.word_box h2{
     font-family:arial;
-    text-align:center;
-    font-size:26px;
-    font-weight:normal;
+    font-size: 26px;
+    font-weight: normal;
     color:#777;
 }
 
