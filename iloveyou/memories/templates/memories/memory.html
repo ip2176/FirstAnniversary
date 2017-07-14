@@ -21,7 +21,7 @@
                         <div id="background">
                             <img class="rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
                         </div>
-                        <audio style="display: none;" controls loop>
+                        <audio style="display: none;" controls loop autoplay>
                             <source src="{{ memory.sound.url }}" type="audio/mpeg">
                         </audio>
                     {% else %}

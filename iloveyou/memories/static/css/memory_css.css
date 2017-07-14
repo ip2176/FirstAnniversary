@@ -18,6 +18,7 @@ img {
     position: absolute;
     padding-left: 50px;
     padding-top: 50px;
+    -webkit-animation: fadein 2s;
 }
 
 #foreground {
@@ -47,6 +48,17 @@ img {
     font-size: 26px;
     font-weight: normal;
     color:#777;
+    -webkit-animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 .rotate0 {
