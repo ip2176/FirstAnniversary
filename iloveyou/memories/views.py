@@ -24,6 +24,9 @@ def index(request):
         # We have reached the end of the list, just grab a new memory and start again
         if not any(memory.shown is False for memory in memories):
 
+            # Pull up the link div!
+            show_link = True
+
             # Get all the memories and update their shown fields
             Memory.objects.all().update(shown=False)
             memories = Memory.objects.all()

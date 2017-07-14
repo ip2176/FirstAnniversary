@@ -21,6 +21,11 @@ img {
     -webkit-animation: fadein 2s;
 }
 
+#link-div {
+    -webkit-animation: fadein 3s;
+    background: rgba(100,100,100,0.7);
+}
+
 #foreground {
     position: absolute;
     height: 400px;
