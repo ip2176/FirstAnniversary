@@ -1,7 +1,12 @@
+html {
+  height: 100%;
+}
+
 body {
     cursor: pointer;
     padding: 0;
     margin: 0;
+    height: 100%;
 }
 
 img {
@@ -9,84 +14,190 @@ img {
     width: 300px;
 }
 
-#picture-container {
-    position: relative;
-    height: 400px;
+.row {
+    height: 100%;
 }
 
-#background {
-    position: absolute;
-    padding-left: 50px;
-    padding-top: 50px;
-    -webkit-animation: fadein 2s;
-}
-
-#link-div {
-    -webkit-animation: fadein 3s;
-    background: rgba(100,100,100,0.7);
-}
-
-#foreground {
-    position: absolute;
-    height: 400px;
-    width: 400px;
-    background-size: 400px 400px;
-    box-shadow: 0 0 50px #ffffff inset;
-    background-image: linear-gradient(to bottom,
-                        rgba(255,255,255, 1) 0%,
-                        rgba(255,255,255, 0) 20%,
-                        rgba(255,255,255, 0) 80%,
-                        rgba(255,255,255, 1) 100%),
-                      linear-gradient(to left,
-                        rgba(255,255,255, 1) 0%,
-                        rgba(255,255,255, 0) 20%,
-                        rgba(255,255,255, 0) 80%,
-                        rgba(255,255,255, 1) 100%),
-    url(/static/images/border-image.png);
-}
-
-.word_box{
-    background: rgba(255,255,255,0.7);
-}
-.word_box h2{
-    font-family:arial;
-    font-size: 26px;
-    font-weight: normal;
-    color:#777;
-    -webkit-animation: fadein 2s;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+.container-fluid {
+    height: 100%;
 }
 
 .rotate0 {
-}
+    }
 
 .rotate90 {
-  -webkit-transform:rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
+
 .rotate180 {
-  -webkit-transform:rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
+
 .rotate270 {
-  -webkit-transform:rotate(270deg);
-  -moz-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+/* For the cell phone! */
+@media (max-width: 415px) {
+
+    #picture-container {
+        position: relative;
+        height: 400px;
+        width: 400px;
+        margin: auto;
+        margin-left: -14px;
+        margin-top: -50px;
+    }
+
+    #background {
+        position: absolute;
+        padding-left: 50px;
+        padding-top: 50px;
+        -webkit-animation: fadein 2s;
+    }
+
+    #link-div {
+        -webkit-animation: fadein 3s;
+        background: rgba(100, 100, 100, 0.7);
+    }
+
+    #foreground {
+        position: absolute;
+        height: 400px;
+        width: 400px;
+        background-size: 400px 400px;
+        box-shadow: 0 0 40px #ffffff inset;
+        background-image: linear-gradient(to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0) 80%,
+        rgba(255, 255, 255, 1) 100%),
+        linear-gradient(to left,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0) 20%,
+                rgba(255, 255, 255, 0) 80%,
+                rgba(255, 255, 255, 1) 100%),
+        url(/static/images/border-image.png);
+    }
+
+    .word_box {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .word_box h2 {
+        font-family: arial;
+        font-size: 26px;
+        font-weight: normal;
+        color: #777;
+        -webkit-animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@media (min-width: 415px) {
+
+    .col-md-8, .col-md-4 {
+        height: 100%;
+    }
+
+    #picture-container {
+        position: fixed;
+        height: 400px;
+        width: 400px;
+        margin: auto;
+        top: 50%;
+        left: 33%;
+        margin-top: -200px; /* Negative half of height. */
+        margin-left: -200px; /* Negative half of width. */
+    }
+
+    #background {
+        position: absolute;
+        padding-left: 50px;
+        padding-top: 50px;
+        -webkit-animation: fadein 2s;
+    }
+
+    #link-div {
+        -webkit-animation: fadein 3s;
+        background: rgba(100, 100, 100, 0.7);
+    }
+
+    #foreground {
+        position: absolute;
+        height: 400px;
+        width: 400px;
+        background-size: 400px 400px;
+        box-shadow: 0 0 50px #ffffff inset;
+        background-image: linear-gradient(to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0) 80%,
+        rgba(255, 255, 255, 1) 100%),
+        linear-gradient(to left,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0) 20%,
+                rgba(255, 255, 255, 0) 80%,
+                rgba(255, 255, 255, 1) 100%),
+        url(/static/images/border-image.png);
+    }
+
+    .word_box {
+        background: rgba(255, 255, 255, 0.7);
+    }
+
+    .word_box h2 {
+        font-family: arial;
+        font-size: 26px;
+        font-weight: normal;
+        color: #777;
+        -webkit-animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 }
