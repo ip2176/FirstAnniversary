@@ -14,12 +14,12 @@
 <body onclick="window.location.href='/';">
 
     <div class="container-fluid">
-        <div class="row align-items-center">
-            <div class="col-md-8">
+        <div class="row align-items-center" id="override-row-mobile">
+            <div class="col-md-8" id="override-md-8-mobile">
                 <div id="picture-container">
                     {% if memory %}
                         <div id="background">
-                            <img class="rotate{{ memory.picture_rotation }}" src="{{ memory.picture.url }}" />
+                            <img class="rotate{{ memory.picture_rotation }} resize" src="{{ memory.picture.url }}" />
                         </div>
                         <audio style="display: none;" controls loop autoplay>
                             <source src="{{ memory.sound.url }}" type="audio/mpeg">
@@ -34,13 +34,15 @@
                 </div>
             </div>
 
-        {% if memory %}
-            <div class="col-4">
+
+        <div class="col-4" id="override-md-4-mobile">
+            {% if memory %}
                 <div class="word_box">
                     <h2>{{ memory.text|linebreaks }}</h2>
                 </div>
-            </div>
-        {% endif %}
+            {% endif %}
+        </div>
+
         </div>
         {% if false %}
             <div class="row align-items-center">

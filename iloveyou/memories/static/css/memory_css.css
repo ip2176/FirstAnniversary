@@ -9,11 +9,6 @@ body {
     height: 100%;
 }
 
-img {
-    height: 300px;
-    width: 300px;
-}
-
 .row {
     height: 100%;
 }
@@ -52,12 +47,50 @@ img {
 /* For the cell phone! */
 @media (max-width: 415px) {
 
+    img {
+        height: 300px;
+        width: 300px;
+    }
+
+    /* This is used to override bootstrap css on mobile */
+    #override-md-4-mobile {
+        flex: 0 0 100%;
+        max-width: 100%;
+        overflow-y: scroll;
+        top: 400px;
+    }
+
+    #override-row-mobile {
+        display: inline;
+    }
+
+    /* This is used to override bootstrap css on mobile */
+    #override-md-8-mobile {
+        position: fixed;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-md-8 {
+        position: fixed;
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 15px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        overflow-y: scroll;
+        top: 415px;
+    }
+
     #picture-container {
         position: relative;
         height: 400px;
         width: 400px;
         margin: auto;
-        margin-left: -14px;
+        margin-left: -28px;
         margin-top: -50px;
     }
 
@@ -66,10 +99,12 @@ img {
         padding-left: 50px;
         padding-top: 50px;
         -webkit-animation: fadein 2s;
+        -moz-animation: fadein 2s;
     }
 
     #link-div {
         -webkit-animation: fadein 3s;
+        -moz-animation: fadein 3s;
         background: rgba(100, 100, 100, 0.7);
     }
 
@@ -102,6 +137,7 @@ img {
         font-weight: normal;
         color: #777;
         -webkit-animation: fadein 2s;
+        -moz-animation: fadein 2s;
     }
 
     @keyframes fadein {
@@ -121,9 +157,23 @@ img {
             opacity: 1;
         }
     }
+    @-moz-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 }
 
+/* For desktop */
 @media (min-width: 415px) {
+
+    img {
+        height: 600px;
+        width: 600px;
+    }
 
     .col-md-8, .col-md-4 {
         height: 100%;
@@ -131,13 +181,13 @@ img {
 
     #picture-container {
         position: fixed;
-        height: 400px;
-        width: 400px;
+        height: 700px;
+        width: 700px;
         margin: auto;
         top: 50%;
         left: 33%;
-        margin-top: -200px; /* Negative half of height. */
-        margin-left: -200px; /* Negative half of width. */
+        margin-top: -350px; /* Negative half of height. */
+        margin-left: -350px; /* Negative half of width. */
     }
 
     #background {
@@ -145,18 +195,20 @@ img {
         padding-left: 50px;
         padding-top: 50px;
         -webkit-animation: fadein 2s;
+        -moz-animation: fadein 2s;
     }
 
     #link-div {
         -webkit-animation: fadein 3s;
+        -moz-animation: fadein 3s;
         background: rgba(100, 100, 100, 0.7);
     }
 
     #foreground {
         position: absolute;
-        height: 400px;
-        width: 400px;
-        background-size: 400px 400px;
+        height: 700px;
+        width: 700px;
+        background-size: 700px 700px;
         box-shadow: 0 0 50px #ffffff inset;
         background-image: linear-gradient(to bottom,
         rgba(255, 255, 255, 1) 0%,
@@ -181,6 +233,7 @@ img {
         font-weight: normal;
         color: #777;
         -webkit-animation: fadein 2s;
+        -moz-animation: fadein 2s;
     }
 
     @keyframes fadein {
@@ -193,6 +246,15 @@ img {
     }
 
     @-webkit-keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @-moz-keyframes fadein {
         from {
             opacity: 0;
         }
