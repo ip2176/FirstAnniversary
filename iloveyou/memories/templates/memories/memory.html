@@ -7,9 +7,10 @@
 
 {% load static %}
 
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
 <link rel="stylesheet" href="{% static 'css/memory_css.css' %}">
 <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+
 
 <body onclick="window.location.href='/';">
 
@@ -35,7 +36,7 @@
             </div>
 
 
-        <div class="col-4" id="override-md-4-mobile">
+        <div class="col-4 override-col-md-4-desktop" id="override-md-4-mobile">
             {% if memory %}
                 <div class="word_box">
                     <h2>{{ memory.text|linebreaks }}</h2>
