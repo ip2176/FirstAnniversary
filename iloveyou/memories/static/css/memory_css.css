@@ -45,7 +45,7 @@ body {
 }
 
 /* For the cell phone in portrait */
-@media (max-width: 415px) and (orientation: portrait) {
+@media all and (max-width: 414px) and (orientation: portrait) {
 
     img {
         height: 300px;
@@ -169,7 +169,7 @@ body {
 }
 
 /* For desktop */
-@media (min-width: 415px) {
+@media all and (min-width: 415px) {
 
     img {
         height: 600px;
@@ -274,7 +274,7 @@ body {
 }
 
 /* For landscape mode! */
-@media (min-width: 415px) and (max-width: 736px) and (orientation: landscape){
+@media all and (min-width: 415px) and (max-width: 736px) and (orientation: landscape){
 
     img {
         height: 300px;
